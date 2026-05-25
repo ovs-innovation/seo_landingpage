@@ -1,0 +1,817 @@
+﻿
+Action: file_editor create /app/static-landing.html --file-text "<!doctype html>
+<html lang=\"en\">
+<head>
+<meta charset=\"utf-8\" />
+<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
+<title>VastoraTech â€” Rank Higher. Get More Traffic. Grow Your Business.</title>
+<meta name=\"description\" content=\"VastoraTech is a premium SEO growth agency helping real estate, home service, and high-ticket businesses rank higher, get more traffic, and generate qualified leads.\" />
+<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />
+<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin />
+<link href=\"https://fonts.googleapis.com/css2?family=Krona+One&family=Poppins:wght@300;400;500;600;700&display=swap\" rel=\"stylesheet\" />
+<style>
+  :root{
+    --bg:#ffffff; --fg:#111111; --pink:#ff4f93; --pink-hover:#e63e80;
+    --blush:#ffdce8; --blush-soft:#fff5f8; --border:#ececec; --muted:#f8f8f8;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:\"Poppins\",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:#ffdce8;color:#111}
+
+  .display{font-family:\"Krona One\",sans-serif;letter-spacing:-.01em;font-weight:400}
+  .container{max-width:1240px;margin:0 auto;padding:0 24px}
+  @media(min-width:768px){.container{padding:0 48px}}
+
+  .glass{background:rgba(255,255,255,.72);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.6);box-shadow:0 8px 32px rgba(0,0,0,.04)}
+  .card{background:#fff;border:1px solid var(--border);border-radius:24px}
+  .pink-glow{box-shadow:0 24px 60px rgba(255,79,147,.18),0 8px 24px rgba(0,0,0,.04)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;border-radius:9999px;padding:14px 28px;cursor:pointer;border:none;transition:all .25s ease;font-family:inherit}
+  .btn-primary{background:var(--pink);color:#fff;box-shadow:0 16px 40px rgba(255,79,147,.35)}
+  .btn-primary:hover{background:var(--pink-hover);transform:translateY(-1px)}
+  .btn-ghost{background:#fff;color:#111;border:1px solid var(--border)}
+  .btn-ghost:hover{border-color:var(--pink);color:var(--pink)}
+  .overline{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--pink);font-weight:600}
+
+  .hover-lift{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease}
+  .hover-lift:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(255,79,147,.12)}
+
+  /* ---------- NAVBAR ---------- */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:20px 0;transition:padding .3s}
+  header.nav.scrolled{padding:12px 0}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;border-radius:9999px;padding:8px 8px 8px 20px}
+  .nav-logo{display:flex;align-items:center;gap:8px;font-family:\"Krona One\",sans-serif;font-size:15px}
+  .nav-logo-mark{width:32px;height:32px;border-radius:9999px;background:var(--pink);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 24px 60px rgba(255,79,147,.18)}
+  .nav-links{display:none;gap:32px}
+  .nav-links a{font-size:13px;font-weight:500;color:rgba(17,17,17,.7);transition:color .2s}
+  .nav-links a:hover{color:var(--pink)}
+  @media(min-width:1024px){.nav-links{display:flex}}
+  .nav-cta{display:none}
+  @media(min-width:640px){.nav-cta{display:inline-flex}}
+  .menu-btn{width:40px;height:40px;border-radius:9999px;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer}
+  @media(min-width:1024px){.menu-btn{display:none}}
+  .mobile-menu{display:none;margin-top:12px;border-radius:24px;padding:20px;flex-direction:column;gap:12px}
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{font-size:14px;padding:8px 0;color:rgba(17,17,17,.8)}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;padding:144px 0 80px;overflow:hidden;
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(255,79,147,.12), transparent 60%),
+      radial-gradient(900px 500px at 0% 30%, rgba(255,220,232,.55), transparent 60%),
+      #fff;
+  }
+  .hero-grid-bg{position:absolute;inset:0;pointer-events:none;opacity:.7;
+    background-image:linear-gradient(rgba(255,79,147,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,79,147,.06) 1px,transparent 1px);
+    background-size:40px 40px;
+    mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%);
+    -webkit-mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%);
+  }
+  .hero-inner{position:relative;display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+  @media(min-width:1024px){.hero-inner{grid-template-columns:1fr 1fr;gap:64px;padding-top:32px}}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);border-radius:9999px;padding:6px 16px;margin-bottom:28px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+  .hero-badge .dot{width:6px;height:6px;border-radius:9999px;background:var(--pink)}
+  .hero-badge span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(17,17,17,.7);font-weight:500}
+  h1.hero-title{font-family:\"Krona One\",sans-serif;font-size:40px;line-height:1.05;margin:0;color:var(--fg)}
+  @media(min-width:640px){h1.hero-title{font-size:52px}}
+  @media(min-width:1024px){h1.hero-title{font-size:64px}}
+  .hero-title .pink{color:var(--pink)}
+  .hero-sub{margin-top:28px;font-size:16px;line-height:1.6;color:rgba(17,17,17,.65);max-width:560px}
+  .hero-ctas{margin-top:36px;display:flex;flex-wrap:wrap;gap:14px}
+  .trust-row{margin-top:40px;display:flex;flex-wrap:wrap;gap:12px 28px}
+  .trust-row .pill{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(17,17,17,.7)}
+  .trust-row svg{color:var(--pink)}
+
+  .hero-visual{position:relative}
+  .hero-visual .ambient{position:absolute;inset:-40px;background:rgba(255,79,147,.1);filter:blur(60px);border-radius:9999px;pointer-events:none}
+  .hero-dashboard{position:relative;border-radius:28px;padding:12px}
+  .hero-dashboard img{border-radius:20px;width:100%}
+  .float-card{position:absolute;border-radius:16px;padding:16px;animation:float 6s ease-in-out infinite}
+  .float-card.fc1{left:-12px;top:48px;width:210px}
+  .float-card.fc2{right:-8px;bottom:40px;width:220px;animation-delay:1.4s}
+  @media(max-width:640px){.float-card{display:none}}
+  .fc-head{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+  .fc-head span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(17,17,17,.6)}
+  .fc-value{font-family:\"Krona One\",sans-serif;font-size:24px;margin:0}
+  .fc-sub{font-size:11px;color:rgba(17,17,17,.55);margin-top:4px}
+  .progress{height:6px;background:var(--blush);border-radius:9999px;margin-top:8px;overflow:hidden}
+  .progress > div{height:100%;background:var(--pink);border-radius:9999px;width:82%}
+
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+  /* ---------- TRUSTED BY ---------- */
+  .trusted{padding:64px 0;background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .trusted .label{text-align:center;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(17,17,17,.5);margin-bottom:40px}
+  .marquee-wrap{position:relative;overflow:hidden}
+  .marquee{display:flex;gap:64px;align-items:center;width:max-content;animation:marquee 32s linear infinite}
+  .marquee span{font-family:\"Krona One\",sans-serif;font-size:22px;color:rgba(17,17,17,.35);white-space:nowrap;transition:color .25s}
+  .marquee span:hover{color:rgba(17,17,17,.7)}
+  .fade-l,.fade-r{position:absolute;top:0;bottom:0;width:80px;pointer-events:none}
+  .fade-l{left:0;background:linear-gradient(to right,#fff,transparent)}
+  .fade-r{right:0;background:linear-gradient(to left,#fff,transparent)}
+  @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+  /* ---------- SECTION COMMON ---------- */
+  section.s{padding:96px 0}
+  @media(min-width:768px){section.s{padding:128px 0}}
+  .s-head{margin-bottom:64px;max-width:640px}
+  .s-head h2{font-family:\"Krona One\",sans-serif;font-size:32px;line-height:1.1;margin:16px 0 0}
+  @media(min-width:640px){.s-head h2{font-size:40px}}
+  @media(min-width:1024px){.s-head h2{font-size:48px}}
+  .s-row{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between;margin-bottom:56px}
+  .s-row p.right{max-width:420px;font-size:15px;color:rgba(17,17,17,.65)}
+
+  /* ---------- STATS ---------- */
+  .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  @media(min-width:1024px){.stats-grid{grid-template-columns:repeat(4,1fr);gap:28px}}
+  .stat{position:relative;overflow:hidden;padding:36px}
+  .stat .blob{position:absolute;right:-32px;top:-32px;width:120px;height:120px;border-radius:9999px;background:rgba(255,220,232,.6);filter:blur(28px)}
+  .stat .val{position:relative;font-family:\"Krona One\",sans-serif;font-size:40px;line-height:1;margin:0}
+  @media(min-width:1024px){.stat .val{font-size:54px}}
+  .stat .bar{position:relative;height:1px;width:40px;background:var(--pink);margin:20px 0}
+  .stat .lbl{position:relative;font-size:13px;color:rgba(17,17,17,.65)}
+
+  /* ---------- SERVICES ---------- */
+  .services{background:rgba(255,245,248,.4);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .services-grid{display:grid;grid-template-columns:1fr;gap:20px}
+  @media(min-width:640px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.services-grid{grid-template-columns:repeat(3,1fr);gap:24px}}
+  .service{padding:32px;display:flex;flex-direction:column}
+  .service .icon{width:48px;height:48px;border-radius:16px;background:var(--blush);display:flex;align-items:center;justify-content:center;margin-bottom:24px;color:var(--pink)}
+  .service h3{font-family:\"Krona One\",sans-serif;font-size:20px;margin:0 0 12px}
+  .service p{font-size:14px;color:rgba(17,17,17,.65);line-height:1.6;flex:1;margin:0}
+  .service .learn{margin-top:24px;background:none;border:none;color:var(--pink);font-weight:500;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:0;font-family:inherit}
+  .service .learn:hover{gap:10px}
+
+  /* ---------- PROCESS ---------- */
+  .process-head{text-align:center;margin:0 auto 80px;max-width:640px}
+  .process-grid{position:relative;display:grid;grid-template-columns:1fr;gap:32px}
+  @media(min-width:640px){.process-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.process-grid{grid-template-columns:repeat(5,1fr);gap:24px}}
+  .connector{display:none;position:absolute;top:34px;left:6%;right:6%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,79,147,.4),transparent)}
+  @media(min-width:1024px){.connector{display:block}}
+  .step{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .step .num{position:relative;z-index:1;width:68px;height:68px;border-radius:9999px;background:#fff;border:1px solid var(--border);box-shadow:0 24px 60px rgba(255,79,147,.18);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--pink)}
+  .step .tag{font-family:\"Krona One\",sans-serif;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--pink);margin-bottom:8px}
+  .step h4{font-family:\"Krona One\",sans-serif;font-size:18px;margin:0 0 8px}
+  .step p{font-size:13px;color:rgba(17,17,17,.6);max-width:200px;line-height:1.6;margin:0}
+
+  /* ---------- CASE STUDIES ---------- */
+  .cases-grid{display:grid;grid-template-columns:1fr;gap:24px}
+  @media(min-width:1024px){.cases-grid{grid-template-columns:repeat(3,1fr)}}
+  .case{position:relative;overflow:hidden;padding:28px;background:linear-gradient(135deg,#fff,rgba(255,245,248,.6))}
+  .case .blob{position:absolute;right:-48px;top:-48px;width:160px;height:160px;border-radius:9999px;background:rgba(255,220,232,.55);filter:blur(60px)}
+  .case .head{position:relative;display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+  .case .tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);font-weight:600;background:var(--blush);border-radius:9999px;padding:6px 12px}
+  .case .duration{display:inline-flex;align-items:center;gap:4px;color:rgba(17,17,17,.4);font-size:11px}
+  .case .title{position:relative;font-family:\"Krona One\",sans-serif;font-size:18px;line-height:1.3;margin:0 0 24px;min-height:48px}
+  .case .chart-card{position:relative;border:1px solid var(--border);background:#fff;border-radius:16px;padding:16px;margin-bottom:20px}
+  .case .chart-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:8px}
+  .case .chart-head .metric{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(17,17,17,.5)}
+  .case .chart-head .after{font-family:\"Krona One\",sans-serif;font-size:22px;margin:4px 0 0}
+  .case .chart-head .growth{font-family:\"Krona One\",sans-serif;color:var(--pink);font-size:16px}
+  .case .chart-foot{display:flex;justify-content:space-between;font-size:11px;color:rgba(17,17,17,.5);margin-top:8px}
+  .case .bullets{position:relative;display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+  .case .bullets div{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(17,17,17,.75)}
+  .case .bullets .d{width:6px;height:6px;border-radius:9999px;background:var(--pink)}
+  .case .read{position:relative;font-size:13px;font-weight:500;display:inline-flex;gap:6px;color:#111;align-items:center;cursor:pointer}
+  .case .read:hover{color:var(--pink)}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .tests{background:rgba(255,245,248,.5);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .tests-head{text-align:center;max-width:640px;margin:0 auto 64px}
+  .tests-grid{display:grid;grid-template-columns:1fr;gap:24px}
+  @media(min-width:768px){.tests-grid{grid-template-columns:repeat(3,1fr)}}
+  .test-card{padding:32px;display:flex;flex-direction:column}
+  .test-card .quote{width:28px;height:28px;color:rgba(255,79,147,.3);margin-bottom:20px}
+  .test-card .stars{display:flex;gap:4px;margin-bottom:20px;color:var(--pink)}
+  .test-card blockquote{font-size:15px;line-height:1.6;color:rgba(17,17,17,.8);margin:0;flex:1}
+  .test-card .who{margin-top:28px;padding-top:24px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px}
+  .test-card .avatar{width:44px;height:44px;border-radius:9999px;object-fit:cover;border:2px solid var(--blush)}
+  .test-card .name{font-size:14px;font-weight:600}
+  .test-card .role{font-size:12px;color:rgba(17,17,17,.55)}
+
+  /* ---------- FAQ ---------- */
+  .faq-wrap{max-width:760px;margin:0 auto}
+  .faq-head{text-align:center;margin-bottom:56px}
+  .faq-item{border:1px solid var(--border);border-radius:24px;background:#fff;padding:0 24px;margin-bottom:12px;transition:all .25s}
+  .faq-item.open{border-color:rgba(255,79,147,.4);box-shadow:0 24px 60px rgba(255,79,147,.12)}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;cursor:pointer;font-family:\"Krona One\",sans-serif;font-size:16px;text-align:left;background:none;border:none;width:100%;color:inherit}
+  @media(min-width:768px){.faq-q{font-size:18px}}
+  .faq-q .chev{transition:transform .25s;color:var(--pink);flex-shrink:0}
+  .faq-item.open .chev{transform:rotate(180deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease, padding .25s}
+  .faq-item.open .faq-a{max-height:300px;padding:0 0 20px}
+  .faq-a p{margin:0;font-size:14px;color:rgba(17,17,17,.65);line-height:1.6}
+
+  /* ---------- CONTACT FORM ---------- */
+  .contact-wrap{display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+  @media(min-width:1024px){.contact-wrap{grid-template-columns:1fr 1fr;gap:80px}}
+  .contact-info h2{font-family:\"Krona One\",sans-serif;font-size:32px;line-height:1.1;margin:16px 0 24px}
+  @media(min-width:1024px){.contact-info h2{font-size:44px}}
+  .contact-info p{font-size:15px;color:rgba(17,17,17,.65);line-height:1.7}
+  .contact-list{margin-top:32px;display:flex;flex-direction:column;gap:14px}
+  .contact-list a{display:flex;align-items:center;gap:12px;font-size:14px;color:rgba(17,17,17,.8)}
+  .contact-list svg{color:var(--pink)}
+  .contact-form{padding:36px;border-radius:24px;background:#fff;border:1px solid var(--border);box-shadow:0 24px 60px rgba(255,79,147,.08)}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:12px;font-weight:500;color:rgba(17,17,17,.7);margin-bottom:6px}
+  .field input,.field textarea{width:100%;border:1px solid var(--border);background:#fff;border-radius:9999px;padding:13px 20px;font-size:13px;color:#111;font-family:inherit;outline:none;transition:all .2s}
+  .field textarea{border-radius:20px;resize:vertical;min-height:96px}
+  .field input:focus,.field textarea:focus{border-color:var(--pink);box-shadow:0 0 0 4px rgba(255,79,147,.15)}
+  .form-msg{font-size:12px;text-align:center;margin-top:8px;color:rgba(17,17,17,.45)}
+  .form-success{display:none;text-align:center;padding:24px 0}
+  .form-success.show{display:block}
+  .form-success .check{width:56px;height:56px;border-radius:9999px;background:var(--blush);color:var(--pink);display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+
+  /* ---------- FINAL CTA ---------- */
+  .final{padding:80px 0 112px;background:#fff}
+  .final-card{position:relative;overflow:hidden;border-radius:32px;background:var(--blush);box-shadow:0 24px 60px rgba(255,79,147,.18);padding:64px 32px}
+  @media(min-width:768px){.final-card{padding:96px 64px}}
+  .final-card .overline{margin-bottom:20px;display:block}
+  .final-card h2{font-family:\"Krona One\",sans-serif;font-size:32px;line-height:1.05;margin:0;max-width:600px}
+  @media(min-width:768px){.final-card h2{font-size:44px}}
+  .final-card .sub{margin-top:24px;font-size:16px;color:rgba(17,17,17,.7);max-width:520px;line-height:1.6}
+  .final-card .actions{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px}
+
+  /* ---------- FOOTER ---------- */
+  footer.site{background:#fff;border-top:1px solid var(--border);padding:80px 0 40px}
+  .foot-grid{display:grid;grid-template-columns:1fr;gap:48px;margin-bottom:64px}
+  @media(min-width:1024px){.foot-grid{grid-template-columns:2fr 1fr 1fr 1fr 1fr}}
+  .foot-col h5{font-family:\"Krona One\",sans-serif;font-size:13px;letter-spacing:.2em;text-transform:uppercase;margin:0 0 20px}
+  .foot-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+  .foot-col a{font-size:13px;color:rgba(17,17,17,.6);transition:color .2s}
+  .foot-col a:hover{color:var(--pink)}
+  .foot-brand p{font-size:14px;color:rgba(17,17,17,.65);line-height:1.6;max-width:340px;margin:0 0 24px}
+  .foot-contacts{display:flex;flex-direction:column;gap:12px;font-size:13px;color:rgba(17,17,17,.7)}
+  .foot-contacts div{display:flex;align-items:center;gap:10px}
+  .foot-contacts svg{color:var(--pink)}
+  .social{display:flex;gap:12px}
+  .social a{width:40px;height:40px;border-radius:9999px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:rgba(17,17,17,.6);transition:all .2s}
+  .social a:hover{color:var(--pink);border-color:var(--pink)}
+  .foot-bottom{padding-top:32px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:space-between;font-size:12px;color:rgba(17,17,17,.5)}
+  @media(min-width:640px){.foot-bottom{flex-direction:row}}
+
+  /* ---------- MODAL ---------- */
+  .modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(17,17,17,.5);backdrop-filter:blur(6px)}
+  .modal.open{display:flex}
+  .modal-card{position:relative;overflow:hidden;max-width:520px;width:100%;background:#fff;border:1px solid var(--border);border-radius:24px}
+  .modal-card .blob{position:absolute;right:-80px;top:-80px;width:220px;height:220px;border-radius:9999px;background:var(--blush);filter:blur(60px);opacity:.7}
+  .modal-body{position:relative;padding:32px}
+  .modal-body .icon{width:40px;height:40px;border-radius:16px;background:var(--blush);color:var(--pink);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .modal-body h3{font-family:\"Krona One\",sans-serif;font-size:22px;margin:0 0 6px}
+  .modal-body .desc{font-size:13px;color:rgba(17,17,17,.6);line-height:1.6;margin:0 0 20px}
+  .modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:9999px;background:rgba(0,0,0,.04);border:none;color:#111;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:1}
+  .modal-close:hover{background:rgba(0,0,0,.08)}
+
+  .toast{position:fixed;bottom:24px;right:24px;z-index:200;background:#fff;border:1px solid var(--border);border-radius:16px;padding:14px 18px;font-size:13px;box-shadow:0 18px 44px rgba(0,0,0,.08);opacity:0;transform:translateY(10px);transition:all .25s;pointer-events:none;max-width:320px}
+  .toast.show{opacity:1;transform:translateY(0)}
+  .toast.error{border-color:rgba(255,79,147,.5);color:var(--pink)}
+  .toast.success{border-color:rgba(34,197,94,.4);color:#15803d}
+
+  .fade-up{animation:fadeUp .9s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class=\"nav\" id=\"nav\">
+  <div class=\"container\">
+    <div class=\"nav-inner glass\">
+      <a href=\"#home\" class=\"nav-logo\">
+        <span class=\"nav-logo-mark\">
+          <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3l1.9 4.6 4.6 1.9-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3z\"/></svg>
+        </span>
+        VastoraTech
+      </a>
+      <nav class=\"nav-links\">
+        <a href=\"#home\">Home</a>
+        <a href=\"#services\">Services</a>
+        <a href=\"#case-studies\">Case Studies</a>
+        <a href=\"#process\">Process</a>
+        <a href=\"#about\">About</a>
+        <a href=\"#contact\">Contact</a>
+      </nav>
+      <div style=\"display:flex;align-items:center;gap:8px\">
+        <button class=\"btn btn-primary nav-cta\" data-open-modal>Get Free SEO Audit</button>
+        <button class=\"menu-btn\" id=\"menuBtn\" aria-label=\"Toggle menu\">
+          <svg id=\"menuIcon\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><line x1=\"3\" y1=\"6\" x2=\"21\" y2=\"6\"/><line x1=\"3\" y1=\"12\" x2=\"21\" y2=\"12\"/><line x1=\"3\" y1=\"18\" x2=\"21\" y2=\"18\"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class=\"mobile-menu glass\" id=\"mobileMenu\">
+      <a href=\"#home\">Home</a>
+      <a href=\"#services\">Services</a>
+      <a href=\"#case-studies\">Case Studies</a>
+      <a href=\"#process\">Process</a>
+      <a href=\"#about\">About</a>
+      <a href=\"#contact\">Contact</a>
+      <button class=\"btn btn-primary\" data-open-modal style=\"margin-top:8px\">Get Free SEO Audit</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id=\"home\" class=\"hero\">
+  <div class=\"hero-grid-bg\"></div>
+  <div class=\"container hero-inner\">
+    <div class=\"fade-up\">
+      <div class=\"hero-badge\"><span class=\"dot\"></span><span>Premium SEO Growth Partner</span></div>
+      <h1 class=\"hero-title\">Rank Higher.<br>Get More Traffic.<br><span class=\"pink\">Grow Your Business.</span></h1>
+      <p class=\"hero-sub\">VastoraTech helps real estate, home service, and high-ticket businesses increase organic rankings, traffic, and qualified leads through data-driven SEO strategy â€” without contracts or guesswork.</p>
+      <div class=\"hero-ctas\">
+        <button class=\"btn btn-primary\" data-open-modal>
+          Get Free SEO Audit
+          <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>
+        </button>
+        <a class=\"btn btn-ghost\" href=\"#case-studies\">View Case Studies</a>
+      </div>
+      <div class=\"trust-row\">
+        <div class=\"pill\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>No Contracts</div>
+        <div class=\"pill\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M3 3v18h18\"/><path d=\"M7 14l3-3 3 3 5-5\"/></svg>Transparent Reporting</div>
+        <div class=\"pill\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M3 17l6-6 4 4 8-8\"/><path d=\"M14 7h7v7\"/></svg>ROI Focused</div>
+      </div>
+    </div>
+    <div class=\"hero-visual\">
+      <div class=\"ambient\"></div>
+      <div class=\"hero-dashboard glass pink-glow fade-up\">
+        <img src=\"https://static.prod-images.emergentagent.com/jobs/4ed4377a-ef01-4467-8cf7-e6d9464ee85b/images/0226f20b6f8ba683ed419be328f9439eb33ad3b45b7a630a15e1897622794d75.png\" alt=\"SEO analytics dashboard mockup\" />
+      </div>
+      <div class=\"float-card glass fc1\">
+        <div class=\"fc-head\">
+          <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#ff4f93\" stroke-width=\"2\"><polyline points=\"3 17 9 11 13 15 21 7\"/><polyline points=\"14 7 21 7 21 14\"/></svg>
+          <span>Organic Traffic</span>
+        </div>
+        <p class=\"fc-value\">+482%</p>
+        <p class=\"fc-sub\">last 12 months</p>
+      </div>
+      <div class=\"float-card glass fc2\">
+        <div class=\"fc-head\">
+          <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#ff4f93\" stroke-width=\"2\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><line x1=\"21\" y1=\"21\" x2=\"16.65\" y2=\"16.65\"/></svg>
+          <span>Top 10 Keywords</span>
+        </div>
+        <p class=\"fc-value\">1,284</p>
+        <div class=\"progress\"><div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUSTED BY ================= -->
+<section class=\"trusted\">
+  <div class=\"container\">
+    <p class=\"label\">Trusted by serious businesses worldwide</p>
+    <div class=\"marquee-wrap\">
+      <div class=\"marquee\" id=\"marquee\">
+        <!-- duplicated via JS -->
+      </div>
+      <div class=\"fade-l\"></div><div class=\"fade-r\"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section id=\"about\" class=\"s\">
+  <div class=\"container\">
+    <div class=\"s-head\">
+      <span class=\"overline\">Numbers That Speak</span>
+      <h2>Results we deliver, every quarter.</h2>
+    </div>
+    <div class=\"stats-grid\">
+      <div class=\"stat card hover-lift\"><div class=\"blob\"></div><p class=\"val\">500%+</p><div class=\"bar\"></div><p class=\"lbl\">Average Traffic Growth</p></div>
+      <div class=\"stat card hover-lift\"><div class=\"blob\"></div><p class=\"val\">1,200+</p><div class=\"bar\"></div><p class=\"lbl\">Keywords Ranked Top 10</p></div>
+      <div class=\"stat card hover-lift\"><div class=\"blob\"></div><p class=\"val\">250+</p><div class=\"bar\"></div><p class=\"lbl\">Happy Clients</p></div>
+      <div class=\"stat card hover-lift\"><div class=\"blob\"></div><p class=\"val\">8+</p><div class=\"bar\"></div><p class=\"lbl\">Years of SEO Experience</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id=\"services\" class=\"s services\">
+  <div class=\"container\">
+    <div class=\"s-row\">
+      <div>
+        <span class=\"overline\">What we do</span>
+        <h2 style=\"font-family:'Krona One',sans-serif;font-size:40px;line-height:1.1;margin:16px 0 0;max-width:560px\">SEO services built for measurable revenue.</h2>
+      </div>
+      <p class=\"right\">A complete growth engine â€” from audit and strategy to execution and reporting. Every service is benchmarked against real pipeline impact.</p>
+    </div>
+    <div class=\"services-grid\" id=\"servicesGrid\"></div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section id=\"process\" class=\"s\">
+  <div class=\"container\">
+    <div class=\"process-head\">
+      <span class=\"overline\">Our Process</span>
+      <h2 style=\"font-family:'Krona One',sans-serif;font-size:40px;line-height:1.1;margin:16px 0 0\">A 5-step system that compounds growth.</h2>
+    </div>
+    <div class=\"process-grid\" id=\"processGrid\">
+      <div class=\"connector\"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CASE STUDIES ================= -->
+<section id=\"case-studies\" class=\"s\" style=\"padding-top:32px\">
+  <div class=\"container\">
+    <div class=\"s-row\">
+      <div>
+        <span class=\"overline\">Proof, not promises</span>
+        <h2 style=\"font-family:'Krona One',sans-serif;font-size:40px;line-height:1.1;margin:16px 0 0\">Case studies that close deals.</h2>
+      </div>
+      <p class=\"right\">Real campaigns. Real growth. Every metric verified through Google Analytics and Search Console.</p>
+    </div>
+    <div class=\"cases-grid\" id=\"casesGrid\"></div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class=\"s tests\">
+  <div class=\"container\">
+    <div class=\"tests-head\">
+      <span class=\"overline\">Client love</span>
+      <h2 style=\"font-family:'Krona One',sans-serif;font-size:40px;line-height:1.1;margin:16px 0 0\">Trusted by founders who care about results.</h2>
+    </div>
+    <div class=\"tests-grid\" id=\"testsGrid\"></div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class=\"s\">
+  <div class=\"container\">
+    <div class=\"faq-wrap\">
+      <div class=\"faq-head\">
+        <span class=\"overline\">FAQ</span>
+        <h2 style=\"font-family:'Krona One',sans-serif;font-size:40px;line-height:1.1;margin:16px 0 0\">Questions, answered honestly.</h2>
+      </div>
+      <div id=\"faqList\"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT FORM ================= -->
+<section id=\"contact\" class=\"s\" style=\"background:rgba(255,245,248,.5);border-top:1px solid var(--border);border-bottom:1px solid var(--border)\">
+  <div class=\"container\">
+    <div class=\"contact-wrap\">
+      <div class=\"contact-info\">
+        <span class=\"overline\">Get in touch</span>
+        <h2>Let's talk about your growth.</h2>
+        <p>Tell us about your business and goals. We'll send back a custom audit and a 90-day growth plan within 24 hours. No pressure. No spam.</p>
+        <div class=\"contact-list\">
+          <a href=\"mailto:hello@vastoratech.com\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><polyline points=\"3 7 12 13 21 7\"/></svg>hello@vastoratech.com</a>
+          <a href=\"tel:+14155550188\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.95.36 1.87.69 2.76a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.32-1.32a2 2 0 0 1 2.11-.45c.89.33 1.81.56 2.76.69A2 2 0 0 1 22 16.92z\"/></svg>+1 (415) 555-0188</a>
+          <a href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/></svg>San Francisco, CA</a>
+        </div>
+      </div>
+      <form class=\"contact-form\" id=\"contactForm\" novalidate>
+        <div class=\"field\"><label for=\"cf-name\">Full Name *</label><input id=\"cf-name\" name=\"name\" type=\"text\" placeholder=\"Jane Doe\" required></div>
+        <div class=\"field\"><label for=\"cf-email\">Work Email *</label><input id=\"cf-email\" name=\"email\" type=\"email\" placeholder=\"jane@company.com\" required></div>
+        <div class=\"field\"><label for=\"cf-website\">Website</label><input id=\"cf-website\" name=\"website\" type=\"url\" placeholder=\"https://yourcompany.com\"></div>
+        <div class=\"field\"><label for=\"cf-phone\">Phone</label><input id=\"cf-phone\" name=\"phone\" type=\"tel\" placeholder=\"+1 (555) 000-0000\"></div>
+        <div class=\"field\"><label for=\"cf-message\">What's your goal? <span style=\"color:rgba(17,17,17,.4)\">(optional)</span></label><textarea id=\"cf-message\" name=\"message\" rows=\"3\" placeholder=\"More leads, higher rankings, expand to new citiesâ€¦\"></textarea></div>
+        <button type=\"submit\" class=\"btn btn-primary\" style=\"width:100%;justify-content:center\">
+          <span class=\"btn-label\">Request My Free Audit</span>
+          <svg class=\"btn-spinner\" style=\"display:none;animation:spin 1s linear infinite\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M21 12a9 9 0 1 1-6.219-8.56\"/></svg>
+        </button>
+        <p class=\"form-msg\">No spam. No pushy sales. Unsubscribe anytime.</p>
+        <div class=\"form-success\" id=\"formSuccess\">
+          <div class=\"check\"><svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M20 6L9 17l-5-5\"/></svg></div>
+          <p style=\"font-family:'Krona One',sans-serif;font-size:18px;margin:0 0 4px\">You're in!</p>
+          <p style=\"font-size:13px;color:rgba(17,17,17,.6);margin:0\">We'll reach out shortly with your free audit.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class=\"final\">
+  <div class=\"container\">
+    <div class=\"final-card\">
+      <div style=\"position:absolute;inset:0;background-image:url('https://static.prod-images.emergentagent.com/jobs/4ed4377a-ef01-4467-8cf7-e6d9464ee85b/images/04d8d3dc62669e8d1451e6cda7c30f33f7aed90c04592b80f46f38d2fa597451.png');background-size:cover;background-position:right center;opacity:.5;mix-blend-mode:multiply\"></div>
+      <div style=\"position:absolute;inset:0;background:linear-gradient(to right,var(--blush),rgba(255,220,232,.85),transparent)\"></div>
+      <div style=\"position:relative;max-width:640px\">
+        <span class=\"overline\">Start Growing Today</span>
+        <h2>Ready to Rank Higher &amp; Generate More Leads?</h2>
+        <p class=\"sub\">Book a free 45-minute SEO strategy call. We'll audit your site, identify your fastest growth opportunities, and show you exactly how to capture more qualified leads.</p>
+        <div class=\"actions\">
+          <button class=\"btn btn-primary\" data-open-modal>
+            Get Your Free SEO Audit
+            <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>
+          </button>
+          <a class=\"btn btn-ghost\" href=\"#case-studies\" style=\"background:#fff\">See Real Results</a>
+        </div>
+        <div style=\"margin-top:24px;display:flex;flex-wrap:wrap;gap:8px 24px;font-size:12px;color:rgba(17,17,17,.65)\">
+          <span>No contracts</span><span style=\"width:4px;height:4px;border-radius:9999px;background:rgba(17,17,17,.3);align-self:center\"></span>
+          <span>45-minute strategy session</span><span style=\"width:4px;height:4px;border-radius:9999px;background:rgba(17,17,17,.3);align-self:center\"></span>
+          <span>Custom 90-day plan</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class=\"site\">
+  <div class=\"container\">
+    <div class=\"foot-grid\">
+      <div class=\"foot-brand\">
+        <div class=\"nav-logo\" style=\"margin-bottom:16px\"><span class=\"nav-logo-mark\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3l1.9 4.6 4.6 1.9-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3z\"/></svg></span>VastoraTech</div>
+        <p>A premium growth agency helping serious businesses rank higher, attract qualified traffic, and close more deals through strategic SEO.</p>
+        <div class=\"foot-contacts\">
+          <div><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><polyline points=\"3 7 12 13 21 7\"/></svg>hello@vastoratech.com</div>
+          <div><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.95.36 1.87.69 2.76a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.32-1.32a2 2 0 0 1 2.11-.45c.89.33 1.81.56 2.76.69A2 2 0 0 1 22 16.92z\"/></svg>+1 (415) 555-0188</div>
+          <div><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/></svg>San Francisco, CA</div>
+        </div>
+      </div>
+      <div class=\"foot-col\"><h5>Company</h5><ul><li><a href=\"#about\">About</a></li><li><a href=\"#case-studies\">Case Studies</a></li><li><a href=\"#process\">Process</a></li><li><a href=\"#\">Blog</a></li><li><a href=\"#\">Careers</a></li></ul></div>
+      <div class=\"foot-col\"><h5>Services</h5><ul><li><a href=\"#services\">SEO Audit</a></li><li><a href=\"#services\">Keyword Research</a></li><li><a href=\"#services\">On-Page SEO</a></li><li><a href=\"#services\">Technical SEO</a></li><li><a href=\"#services\">Link Building</a></li><li><a href=\"#services\">Local SEO</a></li></ul></div>
+      <div class=\"foot-col\"><h5>Resources</h5><ul><li><a href=\"#\">SEO Guide</a></li><li><a href=\"#\">Free Tools</a></li><li><a href=\"#\">Pricing</a></li><li><a href=\"#\">Privacy</a></li><li><a href=\"#\">Terms</a></li></ul></div>
+      <div class=\"foot-col\"><h5>Follow</h5>
+        <div class=\"social\">
+          <a href=\"#\" aria-label=\"Twitter\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 12 8v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z\"/></svg></a>
+          <a href=\"#\" aria-label=\"LinkedIn\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z\"/><rect x=\"2\" y=\"9\" width=\"4\" height=\"12\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg></a>
+          <a href=\"#\" aria-label=\"Instagram\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><rect x=\"2\" y=\"2\" width=\"20\" height=\"20\" rx=\"5\"/><path d=\"M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z\"/><line x1=\"17.5\" y1=\"6.5\" x2=\"17.51\" y2=\"6.5\"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class=\"foot-bottom\">
+      <p>Â© <span id=\"year\"></span> VastoraTech. All rights reserved.</p>
+      <p>Premium SEO Growth Partner Â· Made with intention.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= MODAL ================= -->
+<div class=\"modal\" id=\"leadModal\" role=\"dialog\" aria-modal=\"true\">
+  <div class=\"modal-card\">
+    <button class=\"modal-close\" id=\"modalClose\" aria-label=\"Close\">
+      <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"/><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"/></svg>
+    </button>
+    <div class=\"blob\"></div>
+    <div class=\"modal-body\">
+      <div class=\"icon\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 3l1.9 4.6 4.6 1.9-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3z\"/></svg></div>
+      <h3>Get Your Free SEO Audit</h3>
+      <p class=\"desc\">Tell us a bit about your business. We'll send back a custom audit and a 90-day growth plan within 24 hours.</p>
+      <form id=\"modalForm\" novalidate>
+        <div class=\"field\"><label>Full Name *</label><input name=\"name\" type=\"text\" placeholder=\"Jane Doe\" required></div>
+        <div class=\"field\"><label>Work Email *</label><input name=\"email\" type=\"email\" placeholder=\"jane@company.com\" required></div>
+        <div class=\"field\"><label>Website</label><input name=\"website\" type=\"url\" placeholder=\"https://yourcompany.com\"></div>
+        <div class=\"field\"><label>Phone</label><input name=\"phone\" type=\"tel\" placeholder=\"+1 (555) 000-0000\"></div>
+        <button type=\"submit\" class=\"btn btn-primary\" style=\"width:100%;justify-content:center\">
+          <span class=\"btn-label\">Request My Free Audit</span>
+        </button>
+        <p class=\"form-msg\">No spam. No pushy sales. Unsubscribe anytime.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class=\"toast\" id=\"toast\"></div>
+
+<script>
+// NOTE: keep SVG attributes unescaped (no \" inside HTML).
+/* ============ DATA ============ */
+const BRANDS=[\"Forbes\",\"Clutch\",\"Envato\",\"Houzz\",\"RealEstate\",\"G2\",\"Trustpilot\",\"Inc.\"];
+const SERVICES=[
+  {icon:'<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><line x1=\"21\" y1=\"21\" x2=\"16.65\" y2=\"16.65\"/></svg>',title:\"SEO Audit\",desc:\"Comprehensive technical, on-page, and competitive audit revealing every growth opportunity.\"},
+  {icon:'<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><circle cx=\"7.5\" cy=\"15.5\" r=\"5.5\"/><path d=\"M21 2l-9.6 9.6\"/><path d=\"M15.5 7.5l3 3\"/></svg>',title:\"Keyword Research\",desc:\"High-intent, conversion-focused keyword strategy mapped to your revenue funnel.\"},
+  {icon:'<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.12 2.12 0 1 1 3 3L7 19l-4 1 1-4 12.5-12.5z\"/></svg>',title:\"On-Page SEO\",desc:\"Content optimization, meta engineering, and search-ready architecture that converts.\"},
+  {icon:'<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><circle cx=\"12\" cy=\"12\" r=\"3\"/><path d=\"M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z\"/></svg>',title:\"Technical SEO\",desc:\"Core Web Vitals, indexing, schema, and crawl optimizations engineered for speed.\"},
+  {icon:'<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\"/><path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\"/></svg>',title:\"Link Building\",desc:\"White-hat outreach and digital PR placements that compound authority over time.\"},
+  {icon:'<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><path d=\"M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/></svg>',title:\"Local SEO\",desc:\"Dominate your service area with optimized Google Business Profile and local citations.\"}
+];
+const STEPS=[
+  {icon:'<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M9 11l3 3L22 4\"/><path d=\"M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11\"/></svg>',title:\"Website Audit\",desc:\"Deep technical and competitive audit.\"},
+  {icon:'<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><polygon points=\"16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76\"/></svg>',title:\"SEO Strategy\",desc:\"Custom roadmap tied to your revenue goals.\"},
+  {icon:'<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z\"/></svg>',title:\"Optimization\",desc:\"On-page, technical, and content execution.\"},
+  {icon:'<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\"/><path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\"/></svg>',title:\"Link Building\",desc:\"Authoritative backlinks and digital PR.\"},
+  {icon:'<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"/></svg>',title:\"Growth Tracking\",desc:\"Transparent monthly reporting & iteration.\"}
+];
+const CASES=[
+  {tag:\"Real Estate\",title:\"From local listings to category leader.\",before:\"12K\",after:\"71K\",metric:\"Monthly Organic Visits\",growth:\"+492%\",leads:\"320 qualified leads / mo\",revenue:\"$1.4M attributed pipeline\",points:[12,18,22,30,38,50,62,71]},
+  {tag:\"Home Services\",title:\"Dominating 4 cities in 9 months.\",before:\"8K\",after:\"44K\",metric:\"Monthly Organic Visits\",growth:\"+450%\",leads:\"210 booked jobs / mo\",revenue:\"$880K added revenue\",points:[8,10,14,19,26,32,40,44]},
+  {tag:\"Ecommerce\",title:\"Tripling AOV through SEO-led growth.\",before:\"20K\",after:\"95K\",metric:\"Monthly Organic Visits\",growth:\"+375%\",leads:\"5.2x ROAS\",revenue:\"$2.1M organic revenue\",points:[20,25,33,42,55,68,82,95]}
+];
+const TESTS=[
+  {name:\"Sophia Martinez\",role:\"Founder, LumiÃ¨re Realty\",quote:\"VastoraTech tripled our organic leads in 6 months. Their reporting is the most transparent we've ever seen.\",avatar:\"https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=srgb&fm=jpg&w=200&q=80\"},
+  {name:\"Daniel Chen\",role:\"CEO, Atlas Home Services\",quote:\"We went from page 3 to ranking #1 in four metro areas. The ROI has been undeniable.\",avatar:\"https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=srgb&fm=jpg&w=200&q=80\"},
+  {name:\"Priya Kapoor\",role:\"CMO, Bloom Clinic Group\",quote:\"A premium agency that actually delivers. Their process feels like an extension of our marketing team.\",avatar:\"https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=srgb&fm=jpg&w=200&q=80\"}
+];
+const FAQS=[
+  {q:\"How long does SEO take to show results?\",a:\"Most clients see meaningful traction within 90 days, with significant growth between months 6â€“12. SEO compounds â€” the longer you invest, the more defensible your rankings become.\"},
+  {q:\"Do you guarantee #1 rankings?\",a:\"No ethical SEO agency can guarantee specific rankings. What we guarantee is a transparent process, measurable improvements in organic visibility, and consistent compounding traffic growth.\"},
+  {q:\"What industries do you work with?\",a:\"We specialize in real estate, home services, clinics, and high-ticket B2B service providers. Our playbooks are built for businesses where one new customer is worth thousands.\"},
+  {q:\"How do you measure SEO success?\",a:\"We track keyword rankings, qualified organic traffic, conversions, pipeline-attributable revenue, and ROI â€” reported in a real-time dashboard plus monthly strategy review.\"},
+  {q:\"What's included in the free SEO audit?\",a:\"A complete technical audit, competitor gap analysis, keyword opportunity map, content recommendations, and a 90-day action plan â€” delivered in a 45-minute strategy call.\"}
+];
+
+/* ============ RENDER ============ */
+const $=s=>document.querySelector(s);
+const $$=s=>document.querySelectorAll(s);
+const el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;};
+
+// Marquee
+(function(){
+  const m=$(\"#marquee\");
+  const items=[...BRANDS,...BRANDS].map(b=>`<span>${b}</span>`).join(\"\");
+  m.innerHTML=items;
+})();
+
+// Services
+(function(){
+  const g=$(\"#servicesGrid\");
+  g.innerHTML=SERVICES.map(s=>`
+    <div class=\"service card hover-lift\">
+      <div class=\"icon\">${s.icon}</div>
+      <h3>${s.title}</h3>
+      <p>${s.desc}</p>
+      <button class=\"learn\" data-open-modal>Learn More <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M7 17L17 7M7 7h10v10\"/></svg></button>
+    </div>`).join(\"\");
+})();
+
+// Process
+(function(){
+  const g=$(\"#processGrid\");
+  g.innerHTML+=STEPS.map((s,i)=>`
+    <div class=\"step\">
+      <div class=\"num\">${s.icon}</div>
+      <p class=\"tag\">Step ${i+1}</p>
+      <h4>${s.title}</h4>
+      <p>${s.desc}</p>
+    </div>`).join(\"\");
+})();
+
+// Case studies + sparkline
+function sparkline(points){
+  const w=240,h=64;
+  const max=Math.max(...points), min=Math.min(...points);
+  const step=w/(points.length-1);
+  const d=points.map((p,i)=>{const x=i*step;const y=h-((p-min)/(max-min))*h;return `${i===0?\"M\":\"L\"} ${x} ${y}`;}).join(\" \");
+  const area=`${d} L ${w} ${h} L 0 ${h} Z`;
+  return `<svg viewBox=\"0 0 ${w} ${h}\" style=\"width:100%;height:64px\"><defs><linearGradient id=\"sp${Math.random().toString(36).slice(2,7)}\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0%\" stop-color=\"#ff4f93\" stop-opacity=\".35\"/><stop offset=\"100%\" stop-color=\"#ff4f93\" stop-opacity=\"0\"/></linearGradient></defs><path d=\"${area}\" fill=\"#ffdce8\" opacity=\".7\"/><path d=\"${d}\" fill=\"none\" stroke=\"#ff4f93\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>`;
+}
+(function(){
+  $(\"#casesGrid\").innerHTML=CASES.map(c=>`
+    <article class=\"case card hover-lift\">
+      <div class=\"blob\"></div>
+      <div class=\"head\"><span class=\"tag\">${c.tag}</span><span class=\"duration\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><polyline points=\"3 17 9 11 13 15 21 7\"/></svg> 12 mo</span></div>
+      <h3 class=\"title\">${c.title}</h3>
+      <div class=\"chart-card\">
+        <div class=\"chart-head\">
+          <div><p class=\"metric\">${c.metric}</p><p class=\"after\">${c.after}</p></div>
+          <p class=\"growth\">${c.growth}</p>
+        </div>
+        ${sparkline(c.points)}
+        <div class=\"chart-foot\"><span>Before: ${c.before}</span><span>After: ${c.after}</span></div>
+      </div>
+      <div class=\"bullets\"><div><span class=\"d\"></span>${c.leads}</div><div><span class=\"d\"></span>${c.revenue}</div></div>
+      <a class=\"read\" href=\"#case-studies\">Read full case study <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M7 17L17 7M7 7h10v10\"/></svg></a>
+    </article>`).join(\"\");
+})();
+
+// Testimonials
+(function(){
+  $(\"#testsGrid\").innerHTML=TESTS.map(t=>`
+    <figure class=\"test-card card hover-lift\">
+      <svg class=\"quote\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M9 7H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v3a2 2 0 0 1-2 2H4v2h1a4 4 0 0 0 4-4V7zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v3a2 2 0 0 1-2 2h-1v2h1a4 4 0 0 0 4-4V7z\"/></svg>
+      <div class=\"stars\">${[...Array(5)].map(()=>`<svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"/></svg>`).join(\"\")}</div>
+      <blockquote>\"${t.quote}\"</blockquote>
+      <figcaption class=\"who\"><img class=\"avatar\" src=\"${t.avatar}\" alt=\"${t.name}\"/><div><p class=\"name\">${t.name}</p><p class=\"role\">${t.role}</p></div></figcaption>
+    </figure>`).join(\"\");
+})();
+
+// FAQ
+(function(){
+  $(\"#faqList\").innerHTML=FAQS.map((f,i)=>`
+    <div class=\"faq-item\" data-idx=\"${i}\">
+      <button class=\"faq-q\" type=\"button\">${f.q}
+        <svg class=\"chev\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><polyline points=\"6 9 12 15 18 9\"/></svg>
+      </button>
+      <div class=\"faq-a\"><p>${f.a}</p></div>
+    </div>`).join(\"\");
+  $$(\".faq-item\").forEach(item=>{
+    item.querySelector(\".faq-q\").addEventListener(\"click\",()=>{
+      const wasOpen=item.classList.contains(\"open\");
+      $$(\".faq-item\").forEach(i=>i.classList.remove(\"open\"));
+      if(!wasOpen) item.classList.add(\"open\");
+    });
+  });
+})();
+
+/* ============ NAV ============ */
+const navEl=$(\"#nav\");
+window.addEventListener(\"scroll\",()=>{navEl.classList.toggle(\"scrolled\",window.scrollY>12)},{passive:true});
+const menuBtn=$(\"#menuBtn\"),mm=$(\"#mobileMenu\");
+menuBtn.addEventListener(\"click\",()=>mm.classList.toggle(\"open\"));
+mm.querySelectorAll(\"a\").forEach(a=>a.addEventListener(\"click\",()=>mm.classList.remove(\"open\")));
+
+/* ============ MODAL ============ */
+const modal=$(\"#leadModal\");
+function openModal(){modal.classList.add(\"open\");document.body.style.overflow=\"hidden\"}
+function closeModal(){modal.classList.remove(\"open\");document.body.style.overflow=\"\"}
+document.addEventListener(\"click\",e=>{
+  if(e.target.closest(\"[data-open-modal]\")){e.preventDefault();openModal()}
+});
+$(\"#modalClose\").addEventListener(\"click\",closeModal);
+modal.addEventListener(\"click\",e=>{if(e.target===modal)closeModal()});
+document.addEventListener(\"keydown\",e=>{if(e.key===\"Escape\")closeModal()});
+
+/* ============ TOAST ============ */
+const toast=$(\"#toast\");
+let toastTimer;
+function showToast(msg,type=\"success\"){
+  toast.textContent=msg;
+  toast.className=\"toast show \"+type;
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>toast.classList.remove(\"show\"),3500);
+}
+
+/* ============ FORM SUBMIT ============
+   Both forms send via mailto: by default (works anywhere, no backend).
+   To use Formspree or your own API, set FORM_ENDPOINT below to your URL
+   (e.g. \"https://formspree.io/f/XXXXXXX\") â€” the script will POST JSON to it. */
+const FORM_ENDPOINT=\"\"; // leave empty for mailto fallback
+const TARGET_EMAIL=\"hello@vastoratech.com\";
+
+async function submitLead(data,onDone){
+  if(FORM_ENDPOINT){
+    try{
+      const res=await fetch(FORM_ENDPOINT,{
+        method:\"POST\",
+        headers:{\"Content-Type\":\"application/json\",\"Accept\":\"application/json\"},
+        body:JSON.stringify(data)
+      });
+      if(!res.ok) throw new Error(\"Bad response\");
+      onDone(true);
+    }catch(err){onDone(false)}
+  }else{
+    // mailto fallback
+    const subject=encodeURIComponent(\"New SEO Audit Request â€” \"+(data.name||\"\"));
+    const body=encodeURIComponent(
+      `Name: ${data.name}\nEmail: ${data.email}\nWebsite: ${data.website||\"â€”\"}\nPhone: ${data.phone||\"â€”\"}\n\nMessage:\n${data.message||\"â€”\"}`
+    );
+    window.location.href=`mailto:${TARGET_EMAIL}?subject=${subject}&body=${body}`;
+    onDone(true);
+  }
+}
+
+function validate(form){
+  const data={};
+  let ok=true;
+  form.querySelectorAll(\"input,textarea\").forEach(i=>{data[i.name]=i.value.trim()});
+  if(!data.name||!data.email){ok=false}
+  if(data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)){ok=false}
+  return {ok,data};
+}
+
+// Contact form
+const cForm=$(\"#contactForm\");
+cForm.addEventListener(\"submit\",e=>{
+  e.preventDefault();
+  const {ok,data}=validate(cForm);
+  if(!ok){showToast(\"Please enter a valid name and email.\",\"error\");return}
+  const btn=cForm.querySelector(\"button[type=submit]\");
+  btn.disabled=true;btn.querySelector(\".btn-label\").textContent=\"Sendingâ€¦\";
+  submitLead(data,success=>{
+    btn.disabled=false;btn.querySelector(\".btn-label\").textContent=\"Request My Free Audit\";
+    if(success){
+      cForm.style.display=\"none\";
+      $(\"#formSuccess\").classList.add(\"show\");
+      showToast(\"Audit request received!\",\"success\");
+    }else{
+      showToast(\"Something went wrong. Please email us directly.\",\"error\");
+    }
+  });
+});
+
+// Modal form
+const mForm=$(\"#modalForm\");
+mForm.addEventListener(\"submit\",e=>{
+  e.preventDefault();
+  const {ok,data}=validate(mForm);
+  if(!ok){showToast(\"Please add your name and email.\",\"error\");return}
+  const btn=mForm.querySelector(\"button[type=submit]\");
+  btn.disabled=true;btn.querySelector(\".btn-label\").textContent=\"Sendingâ€¦\";
+  submitLead(data,success=>{
+    btn.disabled=false;btn.querySelector(\".btn-label\").textContent=\"Request My Free Audit\";
+    if(success){
+      showToast(\"Audit request received! Closingâ€¦\",\"success\");
+      mForm.reset();
+      setTimeout(closeModal,1200);
+    }else{
+      showToast(\"Something went wrong. Please email us directly.\",\"error\");
+    }
+  });
+});
+
+// Year
+$(\"#year\").textContent=new Date().getFullYear();
+</script>
+
+</body>
+</html>
